@@ -4,7 +4,7 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
-  const [state, setState] = React.useState<State>({ players: [] });
+  const [state, setState] = React.useState<State>({ players: [], WORLD: { WIDTH: 600, HEIGHT: 600 } });
   React.useEffect(() => {
     const socket = socketio('//192.168.0.175:3001');
     socket.on('update', setState);
