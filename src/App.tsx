@@ -1,8 +1,15 @@
 import React from 'react';
+import socketio from 'socket.io-client';
 import logo from './logo.svg';
 import './App.css';
 
 function App() {
+  const [state, setState] = React.useState<State>({ players: [] });
+  React.useEffect(() => {
+    const socket = socketio(':3001');
+    socket.on('update', setState);
+  }, []);
+
   return (
     <div className="App">
       <header className="App-header">
