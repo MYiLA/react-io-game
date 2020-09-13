@@ -5,5 +5,6 @@ interface Player {
 }
 
 interface State {
+  WORLD: {WIDTH: number, HEIGHT: number};
   players: Player[];
 }
