@@ -6,7 +6,7 @@ import './App.css';
 function App() {
   const [state, setState] = React.useState<State>({ players: [] });
   React.useEffect(() => {
-    const socket = socketio(':3001');
+    const socket = socketio('//192.168.0.175:3001');
     socket.on('update', setState);
   }, []);
 
